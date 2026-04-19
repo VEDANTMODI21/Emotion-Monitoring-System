@@ -11,7 +11,7 @@
       "use": "@vercel/python"
     },
     {
-      "src": "server/index.ts",
+      "src": "api/index.ts",
       "use": "@vercel/node"
     }
   ],
@@ -22,7 +22,7 @@
     },
     {
       "source": "/api/:path*",
-      "destination": "/server/index.ts"
+      "destination": "/api/index.ts"
     },
     {
       "source": "/(index.html)?",

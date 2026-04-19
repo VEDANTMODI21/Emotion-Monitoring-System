@@ -11,7 +11,7 @@ import {
   type InsertEmotionHistory,
   type Suggestion,
   type InsertSuggestion
-} from "@shared/schema";
+} from "../shared/schema";
 import { db } from "./db";
 import { eq, and, gte, desc, sql as drizzleSql } from "drizzle-orm";
 
