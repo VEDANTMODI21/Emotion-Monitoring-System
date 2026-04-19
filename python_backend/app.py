@@ -7,12 +7,8 @@ import random
 import math
 import traceback
 
-try:
-    from flask import Flask, request, jsonify
-    from flask_cors import CORS
-    FLASK_AVAILABLE = True
-except ImportError:
-    FLASK_AVAILABLE = False
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 import logging
 
@@ -213,9 +209,8 @@ except Exception as e:
     fusion_engine = None
 
 # Flask application setup
-if FLASK_AVAILABLE:
-    app = Flask(__name__)
-    CORS(app, origins=["http://localhost:5000", "http://127.0.0.1:5000", "http://localhost:5002", "http://127.0.0.1:5002"])
+app = Flask(__name__)
+CORS(app, origins=["http://localhost:5000", "http://127.0.0.1:5000", "http://localhost:5002", "http://127.0.0.1:5002"])
 
 # Use a Blueprint to handle the /api/analyze prefix on Vercel
 from flask import Blueprint
